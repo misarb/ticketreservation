@@ -1,12 +1,22 @@
 #include "database.hpp"
 #include <iostream>
-
+Database* Database::_instance = nullptr;
 Database::Database(const std::string& connection_string) : conn(connection_string) {
     if (conn.is_open()) {
         std::cout << "Opened database successfully: " << conn.dbname() << std::endl;
     }else{
         throw std::runtime_error("Cannot open database");
     }
+}
+
+Database* Database::getInstance(const std::string &connection_string)
+{
+    if(_instance==nullptr)
+    {
+        _instance = new Database(connection_string);
+    }
+
+    return _instance;
 }
 
 pqxx::connection& Database::get_connection() {

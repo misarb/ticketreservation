@@ -8,9 +8,9 @@
 #include <string>
 #include <optional>
 
-class API {
+class APITicket {
 public:
-    API(Database& db);
+    APITicket(Database& db);
 
     // User-related API endpoints
     bool register_user(const std::string& username, const std::string& email, const std::string& password);

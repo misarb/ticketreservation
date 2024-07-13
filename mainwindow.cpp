@@ -1,10 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include "database/database.hpp"
 
-#include "api/api.hpp"
-#include <QString>
-#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Connect the register button click signal to the slot
     connect(ui->register_2, &QPushButton::clicked, this, &MainWindow::on_register_2_clicked);
+    connect(ui->commandLinkButton, &QPushButton::clicked, this, &MainWindow::on_commandLinkButton_clicked);
 }
 
 MainWindow::~MainWindow()
@@ -24,6 +21,18 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_login_clicked()
 {
+    APITicket api(*db);
+
+    QString userName , password;
+    userName = ui->user->text();
+    password = ui->password->text();
+
+    if(api.login(userName.toStdString(),password.toStdString())){
+        QMessageBox::information(this, "Success", "Welcome Login succes");
+
+    }else{
+        QMessageBox::information(this, "Failed", "User or Password are wrong");
+    }
 
 }
 
@@ -49,8 +58,7 @@ void MainWindow::on_pushButton_clicked()
     password = ui->password_2->text();
 
     try {
-        Database db("dbname=my_db user=postgres password=admin");
-        API api(db);
+        APITicket api(*db);
 
         // Register a new user
         if (api.register_user(userName.toStdString(), email.toStdString(), password.toStdString())) {
@@ -65,6 +73,13 @@ void MainWindow::on_pushButton_clicked()
     } catch (const std::exception& e) {
         QMessageBox::critical(this, "Error", e.what());
     }
+
+}
+
+
+void MainWindow::on_commandLinkButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 
 }
 

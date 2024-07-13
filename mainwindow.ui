@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>952</width>
-    <height>600</height>
+    <width>1038</width>
+    <height>616</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,10 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>40</y>
-      <width>671</width>
-      <height>421</height>
+      <x>10</x>
+      <y>10</y>
+      <width>1011</width>
+      <height>541</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -33,8 +33,8 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>80</y>
+        <x>240</x>
+        <y>120</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -46,8 +46,8 @@
      <widget class="QPushButton" name="login">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>270</y>
+        <x>260</x>
+        <y>310</y>
         <width>141</width>
         <height>51</height>
        </rect>
@@ -59,24 +59,11 @@
        <string>Login</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>280</y>
-        <width>67</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Email</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>180</y>
+        <x>240</x>
+        <y>220</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -88,21 +75,21 @@
      <widget class="QLineEdit" name="user">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>110</y>
+        <x>240</x>
+        <y>150</y>
         <width>411</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QLineEdit { background-color: #FFFFFF; color: #D9D9D9; border: 8px ; padding: 2px; }</string>
+       <string notr="true">QLineEdit { background-color: #FFFFFF; color: black; border: 8px ; padding: 2px; }</string>
       </property>
      </widget>
      <widget class="QPushButton" name="register_2">
       <property name="geometry">
        <rect>
-        <x>350</x>
-        <y>270</y>
+        <x>480</x>
+        <y>310</y>
         <width>141</width>
         <height>51</height>
        </rect>
@@ -117,8 +104,8 @@
      <widget class="QLineEdit" name="password">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>210</y>
+        <x>240</x>
+        <y>250</y>
         <width>411</width>
         <height>41</height>
        </rect>
@@ -130,7 +117,7 @@
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">QLineEdit { background-color: #FFFFFF; color: #D9D9D9; border: 8px ; padding: 2px; }</string>
+       <string notr="true">QLineEdit { background-color: #FFFFFF; color: black; border: 8px ; padding: 2px; }</string>
       </property>
       <property name="inputMask">
        <string/>
@@ -147,8 +134,8 @@
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>330</y>
+        <x>190</x>
+        <y>380</y>
         <width>551</width>
         <height>51</height>
        </rect>
@@ -163,14 +150,14 @@
      <widget class="QLineEdit" name="password_2">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>250</y>
+        <x>190</x>
+        <y>300</y>
         <width>561</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QLineEdit { background-color: #FFFFFF; color: #D9D9D9; border: 8px ; padding: 2px; }</string>
+       <string notr="true">QLineEdit { background-color: #FFFFFF; color: black; border: 8px ; padding: 2px; }</string>
       </property>
       <property name="echoMode">
        <enum>QLineEdit::Password</enum>
@@ -179,8 +166,8 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>40</y>
+        <x>190</x>
+        <y>90</y>
         <width>81</width>
         <height>20</height>
        </rect>
@@ -192,8 +179,8 @@
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>210</y>
+        <x>190</x>
+        <y>260</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -205,8 +192,8 @@
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>120</y>
+        <x>190</x>
+        <y>170</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -218,21 +205,21 @@
      <widget class="QLineEdit" name="email">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>150</y>
+        <x>190</x>
+        <y>200</y>
         <width>561</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QLineEdit { background-color: #FFFFFF; color: #D9D9D9; border: 8px ; padding: 2px; }</string>
+       <string notr="true">QLineEdit { background-color: #FFFFFF; color: black; border: 8px ; padding: 2px; }</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="userName">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>70</y>
+        <x>190</x>
+        <y>120</y>
         <width>561</width>
         <height>41</height>
        </rect>
@@ -240,7 +227,26 @@
       <property name="styleSheet">
        <string notr="true">
 
-QLineEdit { background-color: #FFFFFF; color: #D9D9D9; border: 8px ; padding: 2px; }</string>
+QLineEdit { background-color: #FFFFFF; color: black; border: 8px ; padding: 2px; }</string>
+      </property>
+     </widget>
+     <widget class="QCommandLinkButton" name="commandLinkButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset theme="edit-undo"/>
       </property>
      </widget>
     </widget>
@@ -251,7 +257,7 @@ QLineEdit { background-color: #FFFFFF; color: #D9D9D9; border: 8px ; padding: 2p
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>952</width>
+     <width>1038</width>
      <height>22</height>
     </rect>
    </property>

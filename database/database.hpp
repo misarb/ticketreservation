@@ -6,7 +6,7 @@
 
 class Database {
 public:
-    Database(const std::string& connection_string);
+    static Database* getInstance(const std::string &connection_string);
     pqxx::connection& get_connection();
     
     void createUsersTable();
@@ -19,7 +19,11 @@ public:
     bool updateUser(int user_id, const std::string& username, const std::string& email);
     bool deleteUser(int user_id);
 
+protected:
+    Database(const std::string &connection_string);
+
 private:
+    static Database* _instance;
     pqxx::connection conn;
 };
 
