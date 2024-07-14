@@ -19,6 +19,13 @@ public:
     bool updateUser(int user_id, const std::string& username, const std::string& email);
     bool deleteUser(int user_id);
 
+    // event-related methods
+    bool addEvent(const std::string& event_name, const std::string& event_date, const std::string& location);
+    bool getEventById(int event_id, std::string& event_name, std::string& event_date, std::string& location);
+    bool updateEvent(int event_id, const std::string& event_name, const std::string& event_date, const std::string& location);
+    bool deleteEvent(int event_id);
+    
+
 protected:
     Database(const std::string &connection_string);
 

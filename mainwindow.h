@@ -5,8 +5,10 @@
 #include "database/database.hpp"
 
 #include "api/api.hpp"
+#include "EventModel.h"
 #include <QString>
 #include <QMessageBox>
+#include <QListView>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,20 +22,23 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void loadEvents();
     ~MainWindow();
 
 private slots:
     void on_login_clicked();
     void on_register_2_clicked();
-
     void on_pushButton_clicked();
-
-    void on_commandLinkButton_clicked();
+    void on_commandLinkButton_clicked();    
+    // void on_EventView_indexesMoved(const QModelIndexList &indexes);
 
 private:
     Ui::MainWindow *ui;
     Database* db = Database::getInstance("dbname=my_db user=postgres password=admin");
-    // APITicket api(*db);
-   // API api(*db);
+    QListView *listView;
+    EventModel *model;
+
+    APITicket api;
+
 };
 #endif // MAINWINDOW_H

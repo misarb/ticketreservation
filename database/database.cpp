@@ -99,3 +99,44 @@ bool Database::deleteUser(int user_id) {
     return true;
 }
 
+bool Database::addEvent(const std::string& event_name, const std::string& event_date, const std::string& location) {
+    pqxx::work W(conn);
+    std::string sql = "INSERT INTO events (event_name, event_date, location) VALUES ('" + event_name + "', '" + event_date + "', '" + location + "');";
+    W.exec(sql);
+    W.commit();
+    std::cout << "Event added successfully" << std::endl;
+    return true;
+}
+
+bool Database::getEventById(int event_id, std::string& event_name, std::string& event_date, std::string& location) {
+    pqxx::work W(conn);
+    std::string sql = "SELECT event_name, event_date, location FROM events WHERE event_id = " + std::to_string(event_id) + ";";
+    pqxx::result R = W.exec(sql);
+    W.commit();
+    if (R.size() == 0) {
+        return false;
+    }
+    event_name = R[0][0].as<std::string>();
+    event_date = R[0][1].as<std::string>();
+    location = R[0][2].as<std::string>();
+    return true;
+}
+
+bool Database::updateEvent(int event_id, const std::string& event_name, const std::string& event_date, const std::string& location) {
+    pqxx::work W(conn);
+    std::string sql = "UPDATE events SET event_name = '" + event_name + "', event_date = '" + event_date + "', location = '" + location + "' WHERE event_id = " + std::to_string(event_id) + ";";
+    W.exec(sql);
+    W.commit();
+    std::cout << "Event updated successfully" << std::endl;
+    return true;
+}
+
+bool Database::deleteEvent(int event_id) {
+    pqxx::work W(conn);
+    std::string sql = "DELETE FROM events WHERE event_id = " + std::to_string(event_id) + ";";
+    W.exec(sql);
+    W.commit();
+    std::cout << "Event deleted successfully" << std::endl;
+    return true;
+}
+

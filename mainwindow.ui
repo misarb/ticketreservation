@@ -250,6 +250,18 @@ QLineEdit { background-color: #FFFFFF; color: black; border: 8px ; padding: 2px;
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QListView" name="EventView">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>971</width>
+        <height>481</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
