@@ -17,9 +17,7 @@ pkg_check_modules(PQXX REQUIRED libpqxx)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -27,7 +25,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         api/api.cpp api/api.hpp database/database.cpp database/database.hpp models/event.cpp models/event.hpp models/reservation.cpp models/reservation.hpp models/user.cpp models/user.hpp
-        EventModel.h EventModel.cpp
+        ui/mainwindow.cpp ui/mainwindow.h ui/mainwindow.ui utils/EventModel.cpp utils/EventModel.h
+
 
     )
 # Define target properties for Android with Qt 6 as:
